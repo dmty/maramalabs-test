@@ -6,5 +6,11 @@ type TreeProps = {
 };
 
 export default function Tree({ data }: TreeProps) {
-  return data.map((node) => <Node key={node.id} node={node} />);
+  return (
+    <div>
+      {data.map((node) => (
+        <Node key={node.id} node={node} />
+      ))}
+    </div>
+  );
 }
