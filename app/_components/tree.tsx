@@ -1,11 +1,14 @@
 import { DataNode } from "@/app/api/data";
 import Node from "./node";
+import { use } from "react";
 
 type TreeProps = {
-  data: DataNode[];
+  dataRequest: Promise<DataNode[]>;
 };
 
-export default function Tree({ data }: TreeProps) {
+export default function Tree({ dataRequest }: TreeProps) {
+  const data = use(dataRequest);
+
   return (
     <div>
       {data.map((node) => (

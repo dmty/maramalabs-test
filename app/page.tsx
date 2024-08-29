@@ -1,9 +1,9 @@
+import { Suspense } from "react";
 import Image from "next/image";
-import { fetchData } from "@/app/api/data";
 import Tree from "@/app/_components/tree";
 
 export default async function Home() {
-  const data = await fetchData();
+  const dataRequest = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api`);
 
   return (
     <main className="flex min-h-screen flex-col p-24">
@@ -32,7 +32,9 @@ export default async function Home() {
         </div>
       </div>
       <div className="h-full mt-4">
-        <Tree data={data} />
+        <Suspense fallback={<div>Loading data...</div>}>
+          <Tree dataRequest={dataRequest.json()} />
+        </Suspense>
       </div>
     </main>
   );
