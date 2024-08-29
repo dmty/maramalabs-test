@@ -1,15 +1,15 @@
 // Arrow characters to use: ▼ ▶ •
 
 export type DataNode = {
-  id: string
-  name: string
-  children?: DataNode[]
-}
+  id: string;
+  name: string;
+  children?: DataNode[];
+};
 
 const backendData: DataNode[] = [
   {
     id: "1",
-    name: "Office Map"
+    name: "Office Map",
   },
   {
     id: "2",
@@ -17,13 +17,13 @@ const backendData: DataNode[] = [
     children: [
       {
         id: "8",
-        name: "Onboarding Materials"
+        name: "Onboarding Materials",
       },
       {
         id: "9",
-        name: "Training"
-      }
-    ]
+        name: "Training",
+      },
+    ],
   },
   {
     id: "3",
@@ -35,17 +35,17 @@ const backendData: DataNode[] = [
         children: [
           {
             id: "10",
-            name: "Summer Picnic"
+            name: "Summer Picnic",
           },
           {
             id: "11",
-            name: "Valentine's Day Party"
+            name: "Valentine's Day Party",
           },
           {
             id: "12",
-            name: "New Year's Party"
-          }
-        ]
+            name: "New Year's Party",
+          },
+        ],
       },
       {
         id: "7",
@@ -53,24 +53,24 @@ const backendData: DataNode[] = [
         children: [
           {
             id: "13",
-            name: "Company Anniversary Celebration"
-          }
-        ]
-      }
-    ]
+            name: "Company Anniversary Celebration",
+          },
+        ],
+      },
+    ],
   },
   {
     id: "4",
-    name: "Public Holidays"
+    name: "Public Holidays",
   },
   {
     id: "5",
-    name: "Vacations and Sick Leaves"
-  }
+    name: "Vacations and Sick Leaves",
+  },
 ];
 
 export function fetchData(): Promise<DataNode[]> {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     setTimeout(resolve, 100, backendData);
   });
 }
