@@ -10,10 +10,10 @@ export default function Tree({ dataRequest }: TreeProps) {
   const data = use(dataRequest);
 
   return (
-    <div>
+    <ul role="tree">
       {data.map((node) => (
         <Node key={node.id} node={node} />
       ))}
-    </div>
+    </ul>
   );
 }
